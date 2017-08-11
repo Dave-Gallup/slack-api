@@ -38,7 +38,7 @@ function analyzeSentimentAndSaveScore(io, channelId = 1) {
     .then((scoreData) => {
       const newScoreData = {};
       newScoreData[channelId] = scoreData[0].score;
-
+      console.log('Emitting score >>>>>>', newScoreData);
       io.sockets.emit('score', newScoreData);
     })
     .catch(err => err);

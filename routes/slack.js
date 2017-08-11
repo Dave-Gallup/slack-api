@@ -52,7 +52,7 @@ function setEvents(io) {
         newMessage[channelId][messageId].timestamp = message[0].message_timestamp;
         newMessage[channelId][messageId].channelId = message[0].channel_map_id;
 
-
+        console.log('Emitting message >>>>>>', newMessage);
         io.sockets.emit('messages', newMessage);
 
 
